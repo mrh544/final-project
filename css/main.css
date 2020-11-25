@@ -1,0 +1,21 @@
+:root {
+  --green: #4CD6B7;
+  --red: #D04F51;
+}
+
+.emphasis {
+  color: #ffffff;
+}
+
+.positive {
+  color: var(--green);
+}
+
+.negative {
+  color: var(--red);
+}
+
+/* highcharts */
+.highcharts-input-group {
+  display: none;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Volts | Home</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+  <body>
+    <nav>
+      <div class="volts-count">
+        TOP
+				<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lightning-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+				  <path fill="#8427D1" fill-rule="evenodd" d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+				</svg>
+				1,250
+			</div>
+      <img src="images/icons/notification.svg" />
+      <img src="images/icons/add.svg" />
+    </nav>
+    <header>
+      <img src="images/volts-logo.svg" />
+    </header>
+    <main>
+      <!-- show if user is logged in -->
+      <div class="friends">
+        <div class="row">
+          <div>
+            <h2>Popular</h2>
+          </div>
+          <div id="investors" class="users">
+            <!-- investor templates generated here -->
+          </div>
+        </div>
+      </div>
+
+      <section>
+        <div class="search">
+          <input type="text" name="" placeholder="Search for an investor...">
+          <img src="images/icons/search-icon.svg" />
+        </div>
+      </section>
+
+      <section>
+        <aside class="card">
+          <h1>Berkshire Hathaway</h1>
+          <span class="subtitle" style="float: right">#12 fund</span>
+          <span class="subtitle">BRK.A</span>
+          <h2 id="share-value" class="title">149.15</h2>
+
+          <div class="return">
+            <div class="icon">
+              <div class="oval"></div>
+              <div class="arrow"></div>
+            </div>
+            <span class="value positive">2.17%</span>
+          </div>
+
+          <div class="chart">
+            <div id="edit-button">
+              <img width="12" src="images/icons/edit-icon.svg" />
+            </div>
+            <div id="expand-button">
+              <img width="12" src="images/icons/expand-icon.svg" />
+            </div>
+            <div id="container" style="height: 350px"></div>
+          </div>
+        </aside>
+        <article>
+          <div class="annotate">
+            <h3><span class="emphasis">Reviewed (12)</span> | Unreviewed (100)</h3>
+            <div class="annotations">
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <!-- external libraries -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/async@3.2.0/dist/async.min.js"></script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/annotations.js"></script>
+    <script src="https://unpkg.com/mustache@latest"></script>
+
+    <!-- internal -->
+    <script src="js/helper.js"></script>
+    <script src="js/investor.js"></script>
+    <script src="js/fund.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+    (function() {
+       app.initialize();
+     })();
+    </script>
+
+    <!--<script src="chart.js"></script>-->
+  </body>
+</html>

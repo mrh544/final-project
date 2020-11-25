@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+:root {
+  --purple: #8427D1;
+  --green: #4CD6B7;
+  --red: #D04F51;
+  --gray: #868686;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html, body {
+	font-family: 'Source Sans Pro', sans-serif;
+	margin: 0px;
+	padding: 0px;
+	background-color: #141415;
+}
+
+nav {
+	margin: 25px 40px 25px 40px;
+	display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .search {
+  position: relative;
+  margin-left: auto;
+  width: 483px;
+}
+
+nav .search input {
+  background-color: #1c1c1d;
+  border-radius: 5px;
+  width: 100%;
+  height: 51px;
+  padding-left: 20px;
+  border: 0;
+  outline-width: 0;
+  font-weight: 700;
+  color: #868686;
+  font-size: 16px;
+  opacity: 1;
+  text-align: left;
+}
+
+nav .search img {
+  position: absolute;
+  top: 16px;
+  right: 0;
+}
+
+nav .volts-count {
+  color: #8427D1;
+  margin-left: auto;
+  margin-right: 20px;
+  font-weight: 700;
+}
+
+nav .create {
+  background-color: #1c1c1d;
+  border-radius: 5px;
+  text-align: center;
+  padding: 8px;
+  height: 20px;
+}
+
+main section {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+	justify-content: center;
+}
+
+main section .card {
+  padding: 20px;
+}
+
+main section .card .profile-items {
+  display: flex;
+  justify-content: flex-start;
+}
+
+main section .card .profile-items .picture {
+  background-color: #1c1c1d;
+  border-radius: 2px;
+  width: 62px;
+  height: 62px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 20px;
+}
+
+main section .card .profile-items h1 {
+	font-weight: 700;
+	color: rgb(134, 134, 134);
+	font-size: 22px;
+}
+
+main section .card .profile-items #username {
+	font-weight: 700;
+	color: #FFFFFF;
+	font-size: 16px;
+}
+
+main section .card .subtitle {
+  font-weight: 900;
+  color: #868686;
+  font-size: 15.0px;
+}
+
+main section .card .title {
+  font-weight: 900;
+  color: #FFFFFF;
+  font-size: 30.0px;
+}
+
+main section .card .return {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+main section .card .return .icon {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+main section .card .return .icon .oval {
+  position: absolute;
+  background-image: url(../images/icons/return-oval.svg);
+  left: -1px;
+  top: -1px;
+  width: 40px;
+  height: 40px;
+}
+
+main section .card .return .icon .arrow {
+  position: absolute;
+  background-image: url(../images/icons/arrow-up.svg);
+  left: 12px;
+  top: 13px;
+  width: 13px;
+  height: 12px;
+}
+
+main section .card .return .value {
+  display: flex;
+  font-weight: 900;
+  color: #4CD6B7;
+  font-size: 15px;
+  align-content: center;
+}
+
+main section .card .chart {
+  background-color: #1c1c1d;
+  border-radius: 5px 5px 5px 5px;
+  width: 288px;
+  height: 350px;
+  margin-top: 30px;
+}
+
+main section article {
+  position: relative;
+}
+
+main section article img {
+  position: absolute;
+  right: 10px;
+}
+
+main section article .users {
+  margin-top: 20px;
+}
+
+main section article .tab {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+  justify-content: space-between;
+	margin: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+	width: 600px;
+	height: 50px;
+	background-color: #1c1c1d;
+	color: var(--gray);
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+main section article .tab .return.positive {
+	color: var(--green);
+}
+
+main section article .tab .return.negative {
+	color: var(--red);
+}
+
+main section .description {
+  margin-left: 50px;
+}
+
+main section .description h2 {
+  font-weight: 700;
+  color: var(--gray);
+  font-size: 18px;
+}
+
+main section .follow button {
+  background-color: #1c1c1d;
+  color: var(--gray);
+  border: 0;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+main section .properties {
+  display: flex;
+  flex-direction: column;
+}
+
+main section .properties .bar {
+  background-color: var(--purple);
+  height: 15px;
+  border-radius: 5px;
+}
+
+main section .properties h2 {
+  font-weight: 700;
+  color: var(--gray);
+  font-size: 16px;
+  margin: 10px;
+}
+
+main section .properties .info-tab {
+  background-color: #1c1c1d;
+  border-radius: 5px;
+  text-align: center;
+  padding: 8px 20px 8px 20px;
+  height: 20px;
+  margin: 10px;
+  font-weight: 700;
+  color: var(--gray);
+  font-size: 16px;
+}
