@@ -127,6 +127,32 @@ main section {
   justify-content: center;
 }
 
+main .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+main section .tags {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+main section .tag {
+  cursor: pointer;
+  padding: 10px 15px 10px 15px;
+  border: 2px solid #222222;
+  background: #222222;
+  color: var(--gray);
+  font-weight: bold;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 main section .card {
   padding: 50px;
 }
@@ -185,6 +211,7 @@ main section .card .return .value {
   display: flex;
   font-weight: 900;
   font-size: 15px;
+  margin-top: 8px;
   align-content: center;
 }
 
@@ -195,6 +222,12 @@ main section .card .chart {
   width: 680px;
   height: 420px;
   margin-top: 30px;
+}
+
+main section .card .chart #container {
+  height: 350px;
+  padding-top: 40px;
+  padding-left: 20px;
 }
 
 main section .card .chart .chart-icon {
@@ -286,4 +319,12 @@ main section article .annotate .tab {
   height: 50px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+main section article .annotations {
+  margin-top: 100px;
+  border-radius: 5px;
+  background-color: #1c1c1d;
+  height: 480px;
+  width: 400px;
 }

@@ -10,8 +10,9 @@ const app = {
   retrieveData: function(funds)
   {
     let investors = [];
+    let holdings = [];
 
-    async.forEach(funds, function(fundID, next)
+    async.each(funds, function(fundID, next)
     {
       async.waterfall([
         function(callback) { callback(null, fundID); },
@@ -21,18 +22,29 @@ const app = {
         let purchaseValue = fund.getPurchaseValue(holdings);
         let currentValue = fund.getCurrentValue(holdings);
 
+        // holdings.forEach(function(holding) {
+        //   console.log(fund.getROI(holding.purchasePrice, holding.currentPrice));
+        // });
+        // console.log(fund.getTopHoldings(holdings, 5));
+
         let obj = {
           'fund' : fundID,
-          'roi' : fund.getROI(purchaseValue, currentValue)
+          'roi' : fund.getROI(purchaseValue, currentValue).toFixed(2)
         }
         investors.push(obj);
 
         next(error, holdings);
       });
     }, function (error) {
-      investors = investor.rank(investors);
-      console.log(investors);
-      investor.display(investors);
+      investor.display(investors, function(templates)
+      {
+        templates.forEach(function(template) {
+            $('#investors').append(template);
+        });
+
+        let tag = search.getInput();
+        search.searchByTag(investors, tag);
+      });
     });
   },
 

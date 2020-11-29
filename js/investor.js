@@ -24,26 +24,55 @@ const investor = {
     return array;
   },
 
-  display: function(investors)
+  addProperties: function(data, callback)
   {
-    investors.forEach(function(investor) {
-      let fundID = investor.fund;
-      let roi = investor.roi;
+    let fundID = data.fund;
+    let roi = data.roi;
 
-      fetch('./investors/' + fundID + '.json').then(data => data.json()).then(data => {
-        data.roi = roi;
-        data.fundID = fundID;
+    fetch('./investors/' + fundID + '.json').then(data => data.json()).then(data => {
+      data.roi = roi;
+      data.fundID = fundID;
 
-        if(roi > 0)
-          data.direction = 'positive';
-        else
-          data.direction = 'negative';
+      if(roi > 0)
+        data.direction = 'positive';
+      else
+        data.direction = 'negative';
 
-        fetch('./templates/investor-figure.mustache').then(template => template.text()).then(template => {
-            const rendered = Mustache.render(template, data);
-            $('#investors').append(rendered);
-        });
+      callback(null, data);
+    });
+  },
+
+  getTemplate: function(data, callback)
+  {
+    fetch('./templates/investor-figure.mustache').then(template => template.text()).then(template => {
+      const rendered = Mustache.render(template, data);
+
+      callback(null, rendered);
+    });
+  },
+
+  display: function(data, callback)
+  {
+    let templates = [];
+
+    // rank data before displaying
+    data = investor.rank(data);
+
+    // eachSeries is used to guarantee order 
+    async.eachSeries(data, function(obj, next)
+    {
+      async.waterfall([
+        function(callback) { callback(null, obj); },
+        investor.addProperties,
+        investor.getTemplate
+      ], function (error, rendered)
+      {
+        templates.push(rendered);
+
+        next(error, rendered);
       });
+    }, function (error) {
+      callback(templates);
     });
   }
 

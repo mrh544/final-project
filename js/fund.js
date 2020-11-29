@@ -23,6 +23,23 @@ const fund = {
     let roi = ((currentValue - purchaseValue) / purchaseValue) * 100;
 
     return parseFloat((roi).toFixed(2));
+  },
+
+  getTopHoldings: function(holdings, number)
+  {
+    holdings.sort(function(a, b){
+        return b.roi - a.roi;
+    });
+
+    let topHoldings = [];
+    for(var i = 0; i < number; i++)
+    {
+      topHoldings.push(holdings[i]);
+    }
+
+    console.log(topHoldings);
+
+    return topHoldings;
   }
 
 }

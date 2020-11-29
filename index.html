@@ -36,16 +36,27 @@
 
       <section>
         <div class="search">
-          <input type="text" name="" placeholder="Search for an investor...">
+          <input id="investor-search" type="text" name="" placeholder="Search for an investor...">
           <img src="images/icons/search-icon.svg" />
+        </div>
+      </section>
+
+      <section class="column">
+        <div class="tags">
+          <div class="tag">Female Founders</div>
+          <div class="tag">High Tech</div>
+          <div class="tag">Sustainable</div>
+        </div>
+        <div class="tags">
+          <div class="tag">Black Founders</div>
         </div>
       </section>
 
       <section>
         <aside class="card">
-          <h1>Berkshire Hathaway</h1>
+          <h1>Volts Power 5</h1>
           <span class="subtitle" style="float: right">#12 fund</span>
-          <span class="subtitle">BRK.A</span>
+          <span class="subtitle">VOLTS.POW</span>
           <h2 id="share-value" class="title">149.15</h2>
 
           <div class="return">
@@ -63,7 +74,7 @@
             <div id="expand-button">
               <img width="12" src="images/icons/expand-icon.svg" />
             </div>
-            <div id="container" style="height: 350px"></div>
+            <!--<div id="container"></div>-->
           </div>
         </aside>
         <article>
@@ -77,6 +88,7 @@
     </main>
     <!-- external libraries -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.3"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/async@3.2.0/dist/async.min.js"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://code.highcharts.com/stock/modules/data.js"></script>
@@ -87,13 +99,14 @@
     <script src="js/helper.js"></script>
     <script src="js/investor.js"></script>
     <script src="js/fund.js"></script>
+    <script src="js/search.js"></script>
     <script src="js/app.js"></script>
     <script>
     (function() {
-       app.initialize();
-     })();
+      app.initialize();
+    })();
     </script>
-
-    <!--<script src="chart.js"></script>-->
+    <script src="chart-theme.js"></script>
+    <script src="data-chart.js"></script>
   </body>
 </html>
