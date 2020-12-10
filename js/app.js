@@ -4,7 +4,7 @@ const app = {
 
   initialize: function()
   {
-    app.retrieveData(['0001771524', '0001166559', '0001336528', '0000936753', '0001067983', '0000921669']);
+    app.retrieveData(['0001771524', '0001336528', '0000936753', '0001067983', '0000921669']);
   },
 
   retrieveData: function(funds)
@@ -26,6 +26,9 @@ const app = {
         //   console.log(fund.getROI(holding.purchasePrice, holding.currentPrice));
         // });
         // console.log(fund.getTopHoldings(holdings, 5));
+        //
+        // console.log(fund.getHoldingWithMostShares(holdings));
+        //
 
         let obj = {
           'fund' : fundID,
@@ -42,8 +45,17 @@ const app = {
             $('#investors').append(template);
         });
 
-        let tag = search.getInput();
-        search.searchByTag(investors, tag);
+        search.byTag(investors);
+
+        $('#investor-search').keypress(function (e) {
+          if (e.which == 13)
+          {
+            let id = $(this)[0].id;
+            search.byInput(investors, id);
+
+            return false;
+          }
+        });
       });
     });
   },

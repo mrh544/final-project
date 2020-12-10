@@ -25,9 +25,18 @@ const fund = {
     return parseFloat((roi).toFixed(2));
   },
 
+  getHoldingWithMostShares: function(holdings)
+  {
+    holdings.sort(function(a, b) {
+        return b.shares - a.shares;
+    });
+
+    return holdings[0];
+  },
+
   getTopHoldings: function(holdings, number)
   {
-    holdings.sort(function(a, b){
+    holdings.sort(function(a, b) {
         return b.roi - a.roi;
     });
 

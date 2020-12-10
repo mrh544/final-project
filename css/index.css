@@ -28,6 +28,7 @@ html, body {
 nav {
   display: flex;
   justify-content: flex-end;
+  align-items: flex-end;
   height: 50px;
 }
 
@@ -226,6 +227,7 @@ main section .card .chart {
 
 main section .card .chart #container {
   height: 350px;
+  width: 640px;
   padding-top: 40px;
   padding-left: 20px;
 }
@@ -293,6 +295,17 @@ main .search input {
   transition: all 0.7s ease 0s;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: all 0s 5000s;
+}
+
+input:-webkit-autofill {
+  color: var(--gray);
+}
+
 main .search input:hover {
   width: 520px;
 }
@@ -301,30 +314,4 @@ main .search img {
   position: absolute;
   top: 16px;
   right: 20px;
-}
-
-main section article .annotate {
-  color: var(--gray);
-  margin-top: 50px;
-  border-radius: 5px;
-  width: 450px;
-  height: 500px;
-  margin-top: 30px;
-  padding: 30px;
-}
-
-main section article .annotate .tab {
-  background-color: #1c1c1d;
-  width: inherit;
-  height: 50px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-main section article .annotations {
-  margin-top: 100px;
-  border-radius: 5px;
-  background-color: #1c1c1d;
-  height: 480px;
-  width: 400px;
 }

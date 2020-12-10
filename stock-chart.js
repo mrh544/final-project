@@ -1,20 +1,24 @@
 const apiToken = 'pk_f5c07fe30e3f4fcea2b684c4b6974d55';
 
-Highcharts.getJSON('https://cloud.iexapis.com/v1/deep?symbols=SNAP&token=' + apiToken, function (data) {
+// Highcharts.getJSON('https://cloud.iexapis.com/v1/deep?symbols=SNAP&token=' + apiToken, function (data) {
 
-    let trades = data.trades,
-        seriesData = [];
+    // let trades = data.trades,
+    //     seriesData = [];
+    //
+    // for(var i in trades)
+    // {
+    //   let price = trades[i].price;
+    //   let timestamp = trades[i].timestamp;
+    //
+    //   seriesData.push([timestamp, price]);
+    // }
+Highcharts.getJSON('chart-data.json', function (data) {
 
-    for(var i in trades)
-    {
-      let price = trades[i].price;
-      let timestamp = trades[i].timestamp;
+    let options = {
 
-      seriesData.push([timestamp, price]);
-    }
-
-    // Create the chart
-    Highcharts.stockChart('container', {
+        chart: {
+          type: 'bar'
+        },
 
         plotOptions: {
           series: {
@@ -25,31 +29,17 @@ Highcharts.getJSON('https://cloud.iexapis.com/v1/deep?symbols=SNAP&token=' + api
                 }
               }
             }
+          },
+          column: {
+            stacking: 'normal',
+            dataLabels: {
+                enabled: true
+            }
           }
         },
 
-        annotations: [{
-          labels: [{
-              text: '<img class="chart-icon" src="images/billackman.jpg" />',
-              point: {
-                  x: seriesData[0][0],
-                  y: seriesData[0][1],
-                  xAxis: 0,
-                  yAxis: 0
-              },
-              backgroundColor: 'transparent',
-              borderColor: 'transparent',
-              useHTML: true,
-          }],
-        }],
-
-        rangeSelector: {
-            height: 50,
-            selected: 2
-        },
-
         title: {
-            enabled: false
+            text: null
         },
 
         exporting : {
@@ -68,13 +58,48 @@ Highcharts.getJSON('https://cloud.iexapis.com/v1/deep?symbols=SNAP&token=' + api
           enabled: false
         },
 
-        series: [{
-            name: 'AAPL Stock Price',
-            data: seriesData,
-            type: 'spline',
-            tooltip: {
-                valueDecimals: 2
-            }
-        }]
+        yAxis: {
+          min: 0,
+          stackLabels: {
+            enabled: true,
+          },
+          title: {
+            text: 'Prices'
+          }
+        },
+
+        xAxis: {
+          categories: []
+        },
+
+        series: []
+    }
+
+    let purchasePrices = [];
+    let currentPrices = [];
+
+    for(var i in data)
+    {
+      purchasePrices.push(data[i].purchasePrice);
+      currentPrices.push(data[i].currentPrice);
+
+      options.xAxis.categories.push(data[i].ticker);
+    }
+
+    console.log(options.xAxis.categories);
+
+    options.series.push({
+      name: 'Purchase',
+      data: purchasePrices
     });
+
+    console.log(options.series);
+
+    options.series.push({
+      name: 'Current',
+      data: currentPrices
+    });
+
+    // Create the chart
+    Highcharts.chart('container', options);
 });

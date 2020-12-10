@@ -12,6 +12,11 @@
   padding: 0px;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 html, body {
 	font-family: 'Source Sans Pro', sans-serif;
 	margin: 0px;
@@ -22,13 +27,12 @@ html, body {
 nav {
 	margin: 25px 40px 25px 40px;
 	display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
 nav .search {
   position: relative;
-  margin-left: auto;
   width: 483px;
 }
 
@@ -107,6 +111,14 @@ main section .card .profile-items #username {
 	font-size: 16px;
 }
 
+main section .card .fund-items {
+  margin-top: 20px;
+}
+
+main section .card .fund-items h2 {
+  color: var(--gray);
+}
+
 main section .card .subtitle {
   font-weight: 900;
   color: #868686;
@@ -156,7 +168,7 @@ main section .card .return .value {
   font-weight: 900;
   color: #4CD6B7;
   font-size: 15px;
-  align-content: center;
+  margin-top: 8px;
 }
 
 main section .card .chart {
@@ -196,6 +208,10 @@ main section article .tab {
   border-radius: 5px;
 }
 
+main section article .tab .volt-count {
+  color: var(--purple);
+}
+
 main section article .tab .return.positive {
 	color: var(--green);
 }
@@ -209,9 +225,7 @@ main section .description {
 }
 
 main section .description h2 {
-  font-weight: 700;
   color: var(--gray);
-  font-size: 18px;
 }
 
 main section .follow button {
@@ -236,7 +250,7 @@ main section .properties .bar {
 
 main section .properties h2 {
   font-weight: 700;
-  color: var(--gray);
+  color: #ffffff;
   font-size: 16px;
   margin: 10px;
 }

@@ -58,7 +58,7 @@ const investor = {
     // rank data before displaying
     data = investor.rank(data);
 
-    // eachSeries is used to guarantee order 
+    // eachSeries is used to guarantee order
     async.eachSeries(data, function(obj, next)
     {
       async.waterfall([

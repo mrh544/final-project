@@ -5,18 +5,10 @@
     <title>Volts | Home</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <nav>
-      <div class="volts-count">
-        TOP
-				<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lightning-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-				  <path fill="#8427D1" fill-rule="evenodd" d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
-				</svg>
-				1,250
-			</div>
-      <img src="images/icons/notification.svg" />
-      <img src="images/icons/add.svg" />
     </nav>
     <header>
       <img src="images/volts-logo.svg" />
@@ -45,7 +37,7 @@
         <div class="tags">
           <div class="tag">Female Founders</div>
           <div class="tag">High Tech</div>
-          <div class="tag">Sustainable</div>
+          <div class="tag">Conglomerate</div>
         </div>
         <div class="tags">
           <div class="tag">Black Founders</div>
@@ -54,42 +46,23 @@
 
       <section>
         <aside class="card">
-          <h1>Volts Power 5</h1>
-          <span class="subtitle" style="float: right">#12 fund</span>
-          <span class="subtitle">VOLTS.POW</span>
+          <h1>Top 5 Breakdown</h1>
+          <span class="subtitle">See the change between purchase and current prices for the top holdings in each fund</span>
           <h2 id="share-value" class="title">149.15</h2>
 
-          <div class="return">
-            <div class="icon">
-              <div class="oval"></div>
-              <div class="arrow"></div>
-            </div>
-            <span class="value positive">2.17%</span>
-          </div>
-
           <div class="chart">
-            <div id="edit-button">
-              <img width="12" src="images/icons/edit-icon.svg" />
-            </div>
             <div id="expand-button">
               <img width="12" src="images/icons/expand-icon.svg" />
             </div>
-            <!--<div id="container"></div>-->
+            <div id="container"></div>
           </div>
         </aside>
-        <article>
-          <div class="annotate">
-            <h3><span class="emphasis">Reviewed (12)</span> | Unreviewed (100)</h3>
-            <div class="annotations">
-            </div>
-          </div>
-        </article>
       </section>
     </main>
     <!-- external libraries -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.3"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/async@3.2.0/dist/async.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/async@3.2.0/dist/async.min.js"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://code.highcharts.com/stock/modules/data.js"></script>
     <script src="https://code.highcharts.com/modules/annotations.js"></script>
@@ -107,6 +80,6 @@
     })();
     </script>
     <script src="chart-theme.js"></script>
-    <script src="data-chart.js"></script>
+    <script src="stock-chart.js"></script>
   </body>
 </html>

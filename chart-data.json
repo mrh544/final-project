@@ -1,0 +1,5 @@
+[{"cusip": "76131D103", "shares": 25119016, "purchasePrice": 57.51, "ticker": "QSR", "currentPrice": 61.41},
+{"cusip": "451100101", "shares": 102738324, "purchasePrice": 49.32, "ticker": "IEP", "currentPrice": 50.61},
+{"cusip": "971378104", "shares": 2460000, "purchasePrice": 16.68, "ticker": "WSC", "currentPrice": 21.035},
+{"cusip": "577081102", "shares": 17214626, "purchasePrice": 11.7, "ticker": "MAT", "currentPrice": 16.185},
+{"cusip": "037833100", "shares": 726589166, "purchasePrice": 115.81, "ticker": "AAPL", "currentPrice": 122.02}]

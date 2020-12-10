@@ -1,6 +1,6 @@
 
 Highcharts.theme = {
-    colors: ['#7327D1'],
+    colors: ['rgba(115, 39, 209, .2)', 'rgb(115, 39, 209)'],
     chart: {
         backgroundColor: 'transparent',
         style: {

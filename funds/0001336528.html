@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Volts | Profile</title>
+		<link rel="stylesheet" href="../css/main.css">
+		<link rel="stylesheet" href="../css/profile.css">
+	</head>
+	<body>
+		<nav>
+			<div class="search">
+				<input type="text" name="" placeholder="Search for an investor...">
+				<img src="../images/icons/search-icon.svg" />
+			</div>
+		</nav>
+		<main>
+			<section>
+			    <aside class="card">
+					   <!-- fund-card.mustache -->
+			    </aside>
+
+					<article>
+						<img src="../images/icons/filter-icon.svg">
+						<div class="users">
+							<!-- fund-tab.mustache -->
+						</div>
+					</article>
+
+					<aside class="description">
+						<h2>Tags</h2>
+						<div class="properties"></div>
+					</aside>
+			</section>
+		</main>
+		<!-- external libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/mustache@latest"></script>
+
+		<!-- internal -->
+    <script src="../js/profile.js"></script>
+    <script>
+    (function() {
+      profile.display();
+    })();
+    </script>
+  </body>
+</html>
