@@ -56,10 +56,6 @@ header {
   height: 380px;
 }
 
-header .logo {
-
-}
-
 main .friends {
   display: flex;
   justify-content: center;
@@ -69,6 +65,10 @@ main .users {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+main .friends .row > * {
+  flex-wrap: wrap;
 }
 
 main .friends figure {
@@ -83,7 +83,7 @@ main .friends figure {
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 20px 40px 40px 20px;
+  margin: 20px 40px 70px 20px;
 }
 
 main .friends figure:hover > figcaption {
@@ -314,4 +314,23 @@ main .search img {
   position: absolute;
   top: 16px;
   right: 20px;
+}
+
+/* media queries */
+@media only screen and (max-width: 691px) {
+  main .friends .row h2 {
+    margin-left: 5%;
+  }
+
+  main .search, main .search input {
+    width: 80%
+  }
+
+  main section .card #container {
+    width: 90%!important;
+  }
+
+  main section .card .chart {
+    width: 90%!important;
+  }
 }
